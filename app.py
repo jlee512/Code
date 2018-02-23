@@ -3,11 +3,11 @@ import os, json
 
 app = Flask(__name__)
 
+SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 
 # Route for Home/Index Page
 @app.route('/', methods=["GET"])
 def index():
-    SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
     json_url = os.path.join(SITE_ROOT, "static/json", "posts.json")
     data = json.load(open(json_url))
     return render_template("index.html", data=data)
@@ -36,7 +36,16 @@ def post():
 
 @app.route('/like/<int:post_id>', methods=["GET"])
 def like(post_id):
-    print(post_id)
+
+    json_url = os.path.join(SITE_ROOT, "static/json", "posts.json")
+    data = json.load(open(json_url))
+
+    data[post_id]["like_count"] = data[post_id]["like_count"] + 1
+
+    with open(json_url, "w") as file:
+        json.dump(data, file)
+
+
 
     return redirect("/")
 
