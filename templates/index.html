@@ -22,8 +22,11 @@
                         allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
             <div class="card-body">
-                <h5 class="card-title">{{ list_item["title"] }} <span class="badge badge-primary">New</span> <span
-                        class="badge badge-success"><i class="fas fa-check"></i> Moderated</span></h5>
+                <h5 class="card-title">{{ list_item["title"] }} <span class="badge badge-primary">New</span>
+                    {% if list_item['moderated'] %}
+                        <span class="badge badge-success"><i class="fas fa-check"></i> Moderated</span>
+                    {% endif %}
+                </h5>
                 <p class="card-text">{{ list_item["description"] }}</p>
                 <a href="/like/{{ list_item["id"] }}" class="btn btn-primary"><i
                         class="far fa-smile"></i> {{ list_item["like_count"] }}</a>

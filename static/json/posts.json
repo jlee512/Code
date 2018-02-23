@@ -4,7 +4,7 @@
     "title": "Alkali Metals",
     "description": "Elsie gets stuck into the Periodic Table Including the Alkali Metals",
     "content": "https://www.youtube.com/embed/8QzfEzDX2o8",
-    "verified": true,
+    "moderated": true,
     "like_count": 9
   },
   {
@@ -12,15 +12,31 @@
     "title": "Newton's 3rd Law",
     "description": "Brody Explains Newton's 3rd Law Using Elon Musk's Falcon Heavy Rocket Launch",
     "content": "https://www.youtube.com/embed/Rdyn6-_Ndgc",
-    "verified": true,
-    "like_count": 10
+    "moderated": true,
+    "like_count": 11
   },
   {
     "id": 2,
     "title": "Newton's 1st Law",
     "description": "Marshall wanted to throw a ball at his friend Brody, he used this to explain Newton's 1st Law",
     "content": "https://www.youtube.com/embed/KLp4booGCeI",
-    "verified": true,
+    "moderated": true,
     "like_count": 3
+  },
+  {
+    "id": 3,
+    "title": "Potassium Oxide",
+    "description": "Elsie and Alex describing ionic bonds using Potassium Oxide",
+    "content": "https://www.youtube.com/embed/LarnlCvsZBE",
+    "moderated": true,
+    "like_count": 0
+  },
+  {
+    "id": 4,
+    "title": "Chocolate Science",
+    "description": "Elsie describes the phases of matter and basic atomic theory using chocolate",
+    "content": "https://www.youtube.com/embed/cvcaWRWGy08",
+    "moderated": true,
+    "like_count": 0
   }
 ]

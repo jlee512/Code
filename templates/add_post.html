@@ -13,8 +13,30 @@
 
 {% include "navbar.html" %}
 
-    <p>Add an explanation</p>
-    <p>Under Construction</p>
+<div class="container-fluid d-flex justify-content-center top-margin">
+    <form action="/add_post" method="POST">
+        <div class="form-group">
+            <label for="youtube-input">YouTube Embed Link</label>
+            <input type="text" name="link" class="form-control" id="youtube-input" aria-describedby="youtubeHelp"
+                   placeholder="Enter your YouTube EMBED Link">
+            <small id="youtubeHelp" class="form-text text-muted">Visit <strong><a
+                    href="https://support.google.com/youtube/answer/57407?co=GENIE.Platform%3DDesktop&hl=en">ME</a></strong> if you want some help uploading to YouTube</small>
+        </div>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" name="title" class="form-control" id="title" placeholder="Explanation Title">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" name="moderated" class="form-check-input" id="moderated">
+            <label class="form-check-label" for="moderated">Moderated?</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
 
 </body>
 </html>
