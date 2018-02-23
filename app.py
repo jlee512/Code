@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
@@ -8,11 +8,6 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-
-# Route for adding a post to the system
-@app.route('/add_post', methods=["GET", "POST"])
-def add_post():
-    return render_template("add_post.html")
 
 # Route for the tutorial/about me page
 @app.route('/about', methods=["GET"])
@@ -27,8 +22,18 @@ def login():
 def register():
     return render_template("register.html")
 
+# Route for adding a post to the system
+@app.route('/post', methods=["POST"])
+def post():
 
+    return render_template("add_post.html")
 
+@app.route('/like/<int:post_id>', methods=["GET"])
+def like(post_id):
+
+    print(post_id)
+
+    return redirect("/")
 
 
 
