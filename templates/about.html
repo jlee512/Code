@@ -3,22 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>About Bus Drivers and Bananas</title>
+
+    {% include "styling_links.html" %}
+
+    {% include "scripting_links.html" %}
+
 </head>
 <body>
 
+{% include "navbar.html" %}
 
+<div class="container">
+    <div class="row">
+        <div class="col col-sm-1">
 
-    <div class="jumbotron jumbotron-fluid">
-        <h1 class="display-4">Bus Drivers and Bananas</h1>
-        <p class="lead">Here at Bus Drivers and Bananas we want you to learn concepts in a way that works for you. Even if that means explaining Science without words using well... Bus Drivers and Bananas</p>
-        <hr class="my-4">
-        <p>Search for topics that interest you or post your own explanation and have it moderated</p>
-        <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Search For Topics</a>
-            <a class="btn btn-primary btn-lg" href="#" role="button">Add a Explanation of Your Own</a>
-        </p>
+        </div>
+        <div class="col col-sm">
+            <div id="site-welcome" class="jumbotron jumbotron-fluid">
+                <h1 id="welcome-header" class="display-4"><strong>What is 'Bus Drivers and Bananas'</strong></h1>
+                <p class="lead">Here at <strong>Bus Drivers and Bananas</strong> we want you to learn
+                    concepts in a way that works for you. Even if that means explaining Science without lots of writing.
+                    You can choose to learn in a way that suits you and develop understanding using anything, even
+                    say...
+                    <strong>Bus Drivers and Bananas</strong>
+                </p>
+                <hr class="my-4">
+                <p>Search for topics that interest you or post your own explanation and have it moderated</p>
+
+                <div>
+                    <div id="about-search" class="container">
+                        <p class="lead">Search For Topics</p>
+                        <form class="form-inline my-2 my-lg-0  d-flex justify-content-center">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </div>
+
+                    <div class="container d-flex justify-content-center">
+                    <a class="btn btn-primary btn-lg" href="/add_post" role="button">Add a Explanation of Your Own</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-1">
+
+        </div>
     </div>
-
+</div>
 
 
 </body>
