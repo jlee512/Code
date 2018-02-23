@@ -13,36 +13,25 @@
 
 {% include "navbar.html" %}
 
-<div class="container-fluid d-flex justify-content-center">
-    <div class="card" id="post-1">
-        <div class="card-content-video d-flex justify-content-center">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/8QzfEzDX2o8" frameborder="0"
-            allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Alkali Metals <span class="badge badge-primary">New</span> <span class="badge badge-success"><i class="fas fa-check"></i> Moderated</span></h5>
-            <p class="card-text">Elsie gets stuck into the Periodic Table Including the Alkali Metals</p>
-            <a href="/like/1" class="btn btn-primary"><i class="far fa-smile"></i> 5</a>
+{% for list_item in data %}
+
+    <div class="container-fluid d-flex justify-content-center">
+        <div class="card" id="post-1">
+            <div class="card-content-video d-flex justify-content-center">
+                <iframe width="560" height="315" src="{{ list_item["content"] }}" frameborder="0"
+                        allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ list_item["title"] }} <span class="badge badge-primary">New</span> <span
+                        class="badge badge-success"><i class="fas fa-check"></i> Moderated</span></h5>
+                <p class="card-text">{{ list_item["description"] }}</p>
+                <a href="/like/{{ list_item["id"] }}" class="btn btn-primary"><i
+                        class="far fa-smile"></i> {{ list_item["like_count"] }}</a>
+            </div>
         </div>
     </div>
-    <p>
 
-    </p>
-</div>
-
-<div class="container-fluid d-flex justify-content-center">
-    <div class="card" id="post-2">
-        <div class="card-content-video d-flex justify-content-center">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Rdyn6-_Ndgc" frameborder="0"
-            allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Newton's 3rd Law <span class="badge badge-primary">New</span> <span class="badge badge-success"><i class="fas fa-check"></i> Moderated</span></h5>
-            <p class="card-text">Brody Explains Newton's 3rd Law Using Elon Musk's Falcon Heavy Rocket Launch</p>
-            <a href="/like/2" methods="POST" class="btn btn-primary"><i class="far fa-smile"></i> 10</a>
-        </div>
-    </div>
-</div>
+{% endfor %}
 
 </body>
 </html>
