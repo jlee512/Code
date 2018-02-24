@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import os, json
+from urllib.parse import urlparse, parse_qs
 
 app = Flask(__name__)
 
@@ -73,7 +74,8 @@ def add_post():
 
             post = {}
             post['id'] = id
-            post['content'] = link
+            o = urlparse(link)
+            post['content'] = "https://www.youtube.com/embed/" + o[4][2:]
 
             if title:
                 post['title'] = title
