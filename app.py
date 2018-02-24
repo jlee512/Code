@@ -122,7 +122,7 @@ def add_post():
 def search():
 
     # Query string
-    q = request.form.get("q")
+    q = request.form.get("q").lower()
 
     json_url = os.path.join(SITE_ROOT, "static/json", "posts.json")
     data = json.load(open(json_url))
@@ -136,7 +136,10 @@ def search():
 
     search_data = list(reversed(response_json))
 
-    return render_template("search.html", data=search_data)
+    if len(search_data) == 0:
+        return render_template("index.html")
+    else:
+        return render_template("index.html", data=search_data)
 
 
 if __name__ == '__main__':
