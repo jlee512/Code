@@ -118,5 +118,26 @@ def add_post():
         return render_template("add_post.html")
 
 
+@app.route("/search", methods=["POST"])
+def search():
+
+    # Query string
+    q = request.form.get("q")
+
+    json_url = os.path.join(SITE_ROOT, "static/json", "posts.json")
+    data = json.load(open(json_url))
+
+    response_json = []
+
+    for items in data:
+        for k, v in items.items():
+            if q in str(items[k]).lower() and items not in response_json:
+                response_json.append(items)
+
+    search_data = list(reversed(response_json))
+
+    return render_template("search.html", data=search_data)
+
+
 if __name__ == '__main__':
     app.run()

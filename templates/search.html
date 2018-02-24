@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    {% include "styling_links.html" %}
+
+    {% include "scripting_links.html" %}
+
+</head>
+<body>
+
+{% include "navbar.html" %}
+
+{% for list_item in data %}
+
+    <div class="container-fluid d-flex justify-content-center">
+        <div class="card" id="post-1">
+            <div class="card-content-video d-flex justify-content-center">
+                <iframe width="560" height="315" src="{{ list_item["content"] }}" frameborder="0"
+                        allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ list_item["title"] }} <span class="badge badge-primary">New</span>
+                    {% if list_item['moderated'] %}
+                        <span class="badge badge-success"><i class="fas fa-check"></i> Moderated</span>
+                    {% endif %}
+                </h5>
+                <p class="card-text">{{ list_item["description"] }}</p>
+                <a href="/like/{{ list_item["id"] }}" class="btn btn-primary"><i
+                        class="far fa-smile"></i> {{ list_item["like_count"] }}</a>
+            </div>
+        </div>
+    </div>
+
+{% endfor %}
+
+</body>
+</html>
