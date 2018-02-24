@@ -75,6 +75,9 @@ def add_post():
             post = {}
             post['id'] = id
             o = urlparse(link)
+            print(o)
+            query = parse_qs(o.query)
+            print(query)
             post['content'] = "https://www.youtube.com/embed/" + o[4][2:]
 
             if title:
